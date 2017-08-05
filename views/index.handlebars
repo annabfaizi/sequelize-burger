@@ -1,0 +1,44 @@
+<div class="container">
+	<h1>BURGER BISTRO</h1>
+<div class="columns">
+	<div class="column">
+		
+		<ul>
+		{{#each burgers}}
+			{{#unless this.devoured}}
+		  <li class="burger-item">
+		  	<div class="card">
+		  		<div class="card-content" >
+			  		<form action="{{this.id}}?_method=PUT" method="POST" style="display: flex; align-items: center;">
+				    <b>{{this.burger_name}}</b>
+					<button class="button is-danger" style= "margin-left: 10px;"><i class="fa fa-cutlery" aria-hidden="true"></i></button>	
+				</div>
+		  	</div>
+		  	
+			</form>   
+		  </li>
+		  {{/unless}}
+		{{/each}}
+		</ul>
+		
+	</div>
+	<div class="column">
+		<ul>
+		{{#each burgers}}
+			{{#if this.devoured}}
+		  <li class="burger-item">
+		    {{this.burger_name}}
+		  </li>
+		  {{/if}}
+		{{/each}}
+		</ul>
+	</div>
+	
+</div>
+	
+	<form action="/" method="POST">
+		<input type="text" class="input" placeholder="Enter burger name" name="name"><br>
+		<button class="button is-primary is-large" style="background-color:#148232">Submit</button>
+	</form>
+	
+</div>

@@ -1,2 +1,8 @@
-# sequelize-burger
-Burger app using Sequelize
+# Sequelized Burger App
+This is a Sequelize app using Heroku's JawsDB MySQL as a database and Handlebars to serve the HTML page.
+
+### How it works!  
+* Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.  
+* Whenever a user submits a burger's name, the app will display the burger on the left side of the page -- waiting to be devoured.  
+* Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.  
+* The app will store every burger in a database, whether devoured or not.

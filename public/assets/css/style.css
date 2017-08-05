@@ -1,0 +1,36 @@
+html, body{
+	height: 100%;
+	min-height: 100%;
+	overflow: auto;
+
+}
+body{
+	background: url('../img/burger-bg.jpg') no-repeat;
+	background-size: cover;
+	
+}
+.container{
+	text-align: center;
+	max-width: 900px;
+    background-color: rgba(245, 246, 206, 0.9);
+	min-height: 50%;
+	padding: 30px;	
+}
+input.input{
+	width: 30%;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+h1{
+	font-size: 52px;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.burger-item{
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.column{
+	text-align: left;
+}
