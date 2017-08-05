@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.burgers.findAll({}).then(function(data) {
         var burgerObject = {
-            burger:data
+            burgers:data
         };
         res.render("index", burgerObject);
     });
@@ -20,13 +20,15 @@ module.exports = function(app) {
 
   // POST route for saving a new todo. You can create a todo using the data on req.body
   app.post("/", function(req, res) {
-    db.burgers.create(req.body).then(function(data) {
+    db.burgers.create({
+        burger_name: req.body.name
+    }).then(function() {
         res.redirect("/");
     });
   });
 
   // PUT route for updating burgers. The updated todo will be available in req.body
-  app.put("/", function(req, res) {
+  app.put("/:id", function(req, res) {
     db.burgers.update({
         devoured: true
     },
@@ -34,7 +36,7 @@ module.exports = function(app) {
         where: {
             id: req.params.id
         }
-    }).then(function(data) {
+    }).then(function() {
         res.redirect("/");
     });
   });

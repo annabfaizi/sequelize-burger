@@ -5,7 +5,7 @@ var methodOverride = require("method-override");
 var db = require("./models");
 
 // Sets up the Express App
-var port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 var app = express();
 
 // Sets up the Express app to handle data parsing
@@ -15,7 +15,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Serve static content for the app from the "public" directory in the app directory
-app.use(express.static("public/assets/css"));
+app.use(express.static("public"));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -28,7 +28,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
-var connection = require("./config/connection.js");
+var connection = require("./config/config.json");
 require("./routes/api-routes.js")(app);
 
 
