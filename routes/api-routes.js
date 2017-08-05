@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // GET route for getting all of the burgers
   app.get("/", function(req, res) {
-    db.burger.findAll({}).then(function(data) {
+    db.burgers.findAll({}).then(function(data) {
         var burgerObject = {
             burger:data
         };
@@ -20,14 +20,14 @@ module.exports = function(app) {
 
   // POST route for saving a new todo. You can create a todo using the data on req.body
   app.post("/", function(req, res) {
-    db.burger.create(req.body).then(function(data) {
+    db.burgers.create(req.body).then(function(data) {
         res.redirect("/");
     });
   });
 
   // PUT route for updating burgers. The updated todo will be available in req.body
   app.put("/", function(req, res) {
-    db.burger.update({
+    db.burgers.update({
         devoured: true
     },
     {
@@ -41,7 +41,7 @@ module.exports = function(app) {
 
   // DELETE route for deleting burgers. You can access the burgers's id in req.params.id
   app.delete("/:id", function(req, res) {
-    db.burger.destroy({
+    db.burgers.destroy({
         where: {
             id: req.params.id
         }

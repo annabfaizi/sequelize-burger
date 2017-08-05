@@ -28,6 +28,7 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
+var connection = require("./config/connection.js");
 require("./routes/api-routes.js")(app);
 
 
