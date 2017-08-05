@@ -18,7 +18,8 @@ h1{
 	max-width: 900px;
     background-color: rgba(245, 246, 206, 0.9);
 	min-height: 50%;
-	padding: 30px;	
+	padding: 30px;
+	margin-top: 75px;	
 }
 input.input{
 	width: 30%;
